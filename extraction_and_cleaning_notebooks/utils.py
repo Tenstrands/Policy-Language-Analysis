@@ -41,7 +41,7 @@ def extract_and_update_pdf_texts(policy_pdfs, path_column, text_column):
     Returns:
     - pd.DataFrame: Updated DataFrame with extracted text in 'PDF Text' column where applicable.
     """
-    # filter rows where 'Path to PDF' is not null and 'PDF Text' is null
+    # filter rows where the respective 'Path to PDF' is not null and 'PDF Text' is null
     filtered_policy_pdfs = policy_pdfs[policy_pdfs[path_column].notna() & policy_pdfs[text_column].isna()]
     
     # iteratte through the filtered DataFrame and extract text
